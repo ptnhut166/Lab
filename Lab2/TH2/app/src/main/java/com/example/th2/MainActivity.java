@@ -8,9 +8,12 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,23 +22,42 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        EditText editxt = findViewById(R.id.editxt);
         Button btn = findViewById(R.id.btn);
-        btn.setBackgroundColor(Color.WHITE);
-        //Khoi tao ListView
-        TextView textView=findViewById(R.id.tv_person);
+        TextView tvPerson = findViewById(R.id.tv_person);
         ListView lvPerson = findViewById(R.id.lv_person);
-        final String arr[] = {"Teo", "Ty", "Bin", "Bo"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<String> (this, android.R.layout.simple_list_item_1, arr);
+
+        ArrayList personList = new ArrayList<String>();
+        personList.add("Tèo");
+        personList.add("Tý");
+        personList.add("Bin");
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String> (this, android.R.layout.simple_list_item_1, personList);
         lvPerson.setAdapter(adapter);
         lvPerson.setOnItemClickListener(
                 new AdapterView.OnItemClickListener() {
 
                     public void onItemClick(AdapterView<?> arg0, View view, int position, long id) {
 
-                        textView.setText("position:"+position+";value="+arr[position]);
+                        tvPerson.setText("position:"+position+";value="+ personList.get(position));
 
                         Toast.makeText(MainActivity.this, "Click", Toast.LENGTH_LONG).show();
                     }
+
                 });
+        lvPerson.setOnItemLongClickListener((parent, view, position, id)->{
+            Object person = personList.get(position);
+            personList.remove(person);
+            return true;
+        });
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                String person = editxt.getText().toString();
+                personList.add(person);
+                adapter.notifyDataSetChanged();
+            }
+        });
     }
 }

@@ -21,7 +21,7 @@
             </TextView>
             <EditText
                 android:text=""
-                android:id="@+id/edi_person"
+                android:id="@+id/editxt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -38,8 +38,7 @@
         android:layout_gravity="center"
         android:text="Nhập"
         android:ems="10"
-        android:background="@android:color/white"
-        android:textColor="@android:color/black">
+        android:background="@color/xam">
     </Button>
     <TextView
         android:layout_width="match_parent"
