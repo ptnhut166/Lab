@@ -40,16 +40,9 @@ public class MainActivity extends AppCompatActivity {
                     public void onItemClick(AdapterView<?> arg0, View view, int position, long id) {
 
                         tvPerson.setText("position:"+position+";value="+ personList.get(position));
-
-                        Toast.makeText(MainActivity.this, "Click", Toast.LENGTH_LONG).show();
                     }
 
                 });
-        lvPerson.setOnItemLongClickListener((parent, view, position, id)->{
-            Object person = personList.get(position);
-            personList.remove(person);
-            return true;
-        });
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)
@@ -58,6 +51,19 @@ public class MainActivity extends AppCompatActivity {
                 personList.add(person);
                 adapter.notifyDataSetChanged();
             }
+        });
+        lvPerson.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener()
+    {
+        @Override
+        public boolean onItemLongClick(AdapterView<?> adapterView, View view, int position, long id) {
+
+
+                adapter.remove(adapter.getItem(position));
+
+            adapter.notifyDataSetChanged();
+            Toast.makeText(MainActivity.this, "Long Click",Toast.LENGTH_SHORT);
+            return true;
+        }
         });
     }
 }
