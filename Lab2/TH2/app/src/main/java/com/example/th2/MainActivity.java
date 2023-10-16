@@ -56,12 +56,8 @@ public class MainActivity extends AppCompatActivity {
     {
         @Override
         public boolean onItemLongClick(AdapterView<?> adapterView, View view, int position, long id) {
-
-
-                adapter.remove(adapter.getItem(position));
-
+            adapter.remove(adapter.getItem(position));
             adapter.notifyDataSetChanged();
-            Toast.makeText(MainActivity.this, "Long Click",Toast.LENGTH_SHORT);
             return true;
         }
         });
