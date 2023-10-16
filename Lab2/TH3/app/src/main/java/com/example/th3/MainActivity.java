@@ -72,6 +72,8 @@ public class MainActivity extends AppCompatActivity
         arrEmployee.add(employee);
         //Cập nhập giao diện
         adapter.notifyDataSetChanged();
+        edt_ma.getText().clear();
+        edt_ten.getText().clear();
     }
 }
 
