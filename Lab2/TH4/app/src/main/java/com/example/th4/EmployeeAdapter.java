@@ -1,7 +1,6 @@
 package com.example.th4;
 
 import android.app.Activity;
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -61,6 +60,7 @@ public class EmployeeAdapter extends ArrayAdapter<Employee>
         {
             ivManager.setVisibility(View.GONE);
             tvPosition.setVisibility(View.VISIBLE);
+            tvPosition.setText("Staff");
         }
         // Show different color backgrounds for 2 continuous employees
         if (position%2==0)
