@@ -16,11 +16,12 @@
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:text=" ID:"
-                android:id="@+id/id">
+                >
             </TextView>
             <EditText
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:id="@+id/id">
             </EditText>
         </TableRow>
 
@@ -30,11 +31,12 @@
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:text=" Full name:"
-                android:id="@+id/name">
+                >
             </TextView>
             <EditText
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:id="@+id/name">
             </EditText>
         </TableRow>
 
