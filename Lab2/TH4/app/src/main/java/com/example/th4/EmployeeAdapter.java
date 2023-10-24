@@ -15,8 +15,7 @@ import java.util.List;
 public class EmployeeAdapter extends ArrayAdapter<Employee>
 {
     private Activity context;
-    private List<Employee> ListEmployee;
-    private int layoutID;
+
 
     public EmployeeAdapter(Activity context, int layoutID, List<Employee>
             objects) {
