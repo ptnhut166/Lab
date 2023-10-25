@@ -40,7 +40,7 @@ public class DishAdapter extends BaseAdapter {
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
-            convertView = LayoutInflater.from(context).inflate(R.layout.item_selected_thumbnail, null, false);
+            convertView = LayoutInflater.from(context).inflate(R.layout.dish_view, null, false);
         }
 
         Dish dish = dishes.get(position);

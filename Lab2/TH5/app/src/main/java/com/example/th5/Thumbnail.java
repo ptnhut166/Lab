@@ -15,6 +15,14 @@ public enum Thumbnail {
         this.img = img;
     }
 
+    public void setImg(int img) {
+        this.img = img;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getName() {
         return name;
     }

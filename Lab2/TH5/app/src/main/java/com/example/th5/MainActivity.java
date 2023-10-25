@@ -1,6 +1,8 @@
 package com.example.th5;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -25,6 +27,8 @@ public class MainActivity extends AppCompatActivity
 
     private Thumbnail[] thumbnails = new Thumbnail[] {Thumbnail.Thumbnail1, Thumbnail.Thumbnail2, Thumbnail.Thumbnail3, Thumbnail.Thumbnail4};
 
+    @SuppressLint("MissingInflatedId")
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -35,7 +39,7 @@ public class MainActivity extends AppCompatActivity
         thumbnailSpinner.setAdapter(thumbnailAdapter);
 
         gridView = findViewById(R.id.gv_dishes);
-        dishAdapter = new DishAdapter(this, R.layout.dish, dishes);
+        dishAdapter = new DishAdapter(this, R.layout.dish_view, dishes);
         gridView.setAdapter(dishAdapter);
 
         editTextName = (EditText) findViewById(R.id.et_name);

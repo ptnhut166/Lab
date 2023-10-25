@@ -13,7 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 public class ThumbnailAdapter extends ArrayAdapter<Thumbnail> {
-    Context context;
+    private Context context;
 
     public ThumbnailAdapter(@NonNull Context context, int resource, int textViewResourceId, @NonNull Thumbnail[] objects) {
         super(context, resource, textViewResourceId, objects);
@@ -34,20 +34,17 @@ public class ThumbnailAdapter extends ArrayAdapter<Thumbnail> {
         return convertView;
     }
     @Override
+    @NonNull
     public View getView(int position, View convertView, ViewGroup viewGroup)
     {
+        Thumbnail thumbnail = getItem(position);
         if ( convertView== null)
         {
             convertView = LayoutInflater.from(context).inflate(R.layout.item_selected_thumbnail, null, false);
         }
-        TextView tvName = convertView.findViewById(R.id.tv_item_thumbnail);
-        ImageView imageView = convertView.findViewById(R.id.img_item_thumbnail);
-        Thumbnail thumbnail = getItem(position);
-        tvName.setText(thumbnail.getName());
-        imageView.setImageResource(thumbnail.getImg());
+        ((TextView) convertView).setText(thumbnail.getName());
 
         return convertView;
     }
-
 
 }
