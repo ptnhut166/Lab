@@ -1,15 +1,14 @@
 package com.example.sqlite;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.app.Activity;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
-
-public class MainActivity extends Activity {
+public class MainActivity  extends Activity {
     private DbAdapter dbAdapter;
     private Cursor cursor;
     private List<String> users;
